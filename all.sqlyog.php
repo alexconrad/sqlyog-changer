@@ -21,7 +21,8 @@ if (empty($newEncodedPass)) {
 
 $sqlyog_ini_location = $homepath.DIRECTORY_SEPARATOR.'AppData'.DIRECTORY_SEPARATOR.'Roaming'.DIRECTORY_SEPARATOR.'SQLyog'.DIRECTORY_SEPARATOR.'sqlyog.ini';
 
-
+//parse_ini_file($sqlyog_ini_location);//errors with
+//PHP Warning:  syntax error, unexpected $end, expecting TC_DOLLAR_CURLY or TC_QUOTED_STRING or '"' in XXXsqlyog.ini on line XXX
 $data = file_get_contents($sqlyog_ini_location);
 if (!$data) {
     die("Cannot read ".$sqlyog_ini_location."\n");
